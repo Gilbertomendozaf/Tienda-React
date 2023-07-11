@@ -51,7 +51,7 @@ export const PRODUCTS = [
     category: "Vestimenta",
     price: 68.99,
     stock: 10,
-    productImage: "./src/assets/products/6.png",
+    productImage: "./src/assets/products/6.webp",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -60,7 +60,7 @@ export const PRODUCTS = [
     category: "Vestimenta",
     price: 120.99,
     stock: 10,
-    productImage: "./src/assets/products/7.png",
+    productImage: "./src/assets/products/7.webp",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -69,7 +69,9 @@ export const PRODUCTS = [
     category: "Vestimenta",
     price: 40.99,
     stock: 10,
-    productImage: "./src/assets/products/8.png",
+    productImage: "./src/assets/products/8.webp",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];
+
+export default PRODUCTS

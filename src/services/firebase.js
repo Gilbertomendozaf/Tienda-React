@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore";
-
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, addDoc } from "firebase/firestore";
+import PRODUCTS from "../products";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -60,4 +60,14 @@ export async function getCategoryData(categoryid) {
     })        
     return dataDocs;
 
+}
+
+
+export async function exportData(){
+    const productsCollectionRef = collection(db, "Products")
+    
+    for (let item of PRODUCTS){
+        const res = await addDoc(productsCollectionRef, item)
+        console.log("Documento creado:", res.id);
+    }
 }
