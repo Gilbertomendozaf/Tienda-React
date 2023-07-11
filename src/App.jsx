@@ -5,6 +5,7 @@ import { Shop } from "./components/shop/shop";
 import { Cart } from "./components/Cart/cart";
 import { Navbar } from "./components/Navbar/navbar";
 import { ItemDetail } from "./components/shop/ItemDetail";
+import ConfirmedOrder from "./components/Checkout/confirmedOrder";
 // import { exportData } from "./services/firebase";
 
 
@@ -21,6 +22,10 @@ function App() {
             <Route path="/category/:categoryid" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/:id" element={<ItemDetail/>} />
+            <Route
+              path="/order-confirmation/:orderid"
+              element={<ConfirmedOrder />}
+            />
             <Route path="*" element={<h4>Error 404: Page not found</h4>} />
           </Routes>
           </main>

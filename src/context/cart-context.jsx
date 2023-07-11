@@ -71,6 +71,7 @@ export const CartContextProvider = (props) => {
     clearCart,
     cartItemCount,
     removeItemFromCart,
+    clearCart,
   };
 
   return <CartContext.Provider value={contextValue}>{props.children}</CartContext.Provider>;
