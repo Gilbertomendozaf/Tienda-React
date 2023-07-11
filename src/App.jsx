@@ -22,8 +22,7 @@ function App() {
             <Route path="/:id" element={<ItemDetail/>} />
           </Routes>
           </main>
-
-          <button onClick={exportData}> Export Data</button>
+          {/* <button onClick={exportData}> Export Data</button> */}
         </BrowserRouter>
       </CartContextProvider>
     </div>
