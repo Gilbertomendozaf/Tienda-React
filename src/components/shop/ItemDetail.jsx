@@ -40,7 +40,7 @@ export const ItemDetail = () => {
             <p>${item.price}</p>
             <p>${item.detail}</p>
         </div>
-        <button className="addToCartBttn" onClick={() => addToCart(idd)}>
+        <button className="addToCartBttn" onClick={() => addToCart(id)}>
             Agregar al carrito {cartItemCount > 0 && <> ({cartItemCount})</>}
         </button>
         <Link to="/">Volver</Link>
