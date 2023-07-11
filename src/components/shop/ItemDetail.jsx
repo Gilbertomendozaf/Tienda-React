@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { CartContext } from "../../context/cart-context";
 import { getItemData } from '../../services/firebase';
 
+import "./shop.css";
+
 
 export const ItemDetail = () => {
     const [item, setItem] = useState({})

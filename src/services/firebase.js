@@ -62,12 +62,16 @@ export async function getCategoryData(categoryid) {
 
 }
 
+// exportar productos.
 
-export async function exportData(){
-    const productsCollectionRef = collection(db, "Products")
+
+// export async function exportData(){
+//     const productsCollectionRef = collection(db, "Products")
     
-    for (let item of PRODUCTS){
-        const res = await addDoc(productsCollectionRef, item)
-        console.log("Documento creado:", res.id);
-    }
-}
+//     for (let item of PRODUCTS){
+    // item.index = item.id
+//     delete item.id;
+//         const res = await addDoc(productsCollectionRef, item)
+//         console.log("Documento creado:", res.id);
+//     }
+// }

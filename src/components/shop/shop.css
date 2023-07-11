@@ -56,3 +56,50 @@ a{
   text-decoration: none;
   color: black;
 }
+.item-detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-detail img {
+  width: 400px;
+  height: 400px;
+  margin-right: 50px;
+}
+
+.item-detail .description {
+  width: 50%;
+  text-align: left;
+}
+
+.item-detail h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.item-detail p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.item-detail .addToCartBttn {
+  background-color: rgb(19, 19, 19);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.item-detail .addToCartBttn:hover {
+  background-color: #333;
+}
+
+.item-detail a {
+  text-decoration: none;
+  color: black;
+}

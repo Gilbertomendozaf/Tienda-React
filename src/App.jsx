@@ -5,7 +5,8 @@ import { Shop } from "./components/shop/shop";
 import { Cart } from "./components/Cart/cart";
 import { Navbar } from "./components/Navbar/navbar";
 import { ItemDetail } from "./components/shop/ItemDetail";
-import { exportData } from "./services/firebase";
+// import { exportData } from "./services/firebase";
+
 
 
 function App() {
