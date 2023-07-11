@@ -69,7 +69,7 @@ export async function getCategoryData(categoryid) {
 //     const productsCollectionRef = collection(db, "Products")
     
 //     for (let item of PRODUCTS){
-    // item.index = item.id
+//     item.index = item.id
 //     delete item.id;
 //         const res = await addDoc(productsCollectionRef, item)
 //         console.log("Documento creado:", res.id);

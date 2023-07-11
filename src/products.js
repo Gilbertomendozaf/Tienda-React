@@ -6,7 +6,7 @@ export const PRODUCTS = [
     category: "Tecnologia",
     price: 999.99,
     stock: 10,
-    productImage: "./src/assets/products/1.png",
+    productImage: "https://ibb.co/2qRbv5q",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -15,7 +15,7 @@ export const PRODUCTS = [
     category: "Tecnologia",
     price: 1999.99,
     stock: 10,
-    productImage: "./src/assets/products/2.png",
+    productImage: "https://ibb.co/N9dY2mc",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -24,7 +24,7 @@ export const PRODUCTS = [
     category: "Tecnologia",
     price: 699.99,
     stock: 10,
-    productImage: "./src/assets/products/3.png",
+    productImage: "https://ibb.co/jyNw9wJ",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -33,7 +33,7 @@ export const PRODUCTS = [
     category: "Vestimenta",
     price: 228.99,
     stock: 10,
-    productImage: "./src/assets/products/4.png",
+    productImage: "https://ibb.co/bKLpx3s",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -42,7 +42,7 @@ export const PRODUCTS = [
     category: "Tecnologia",
     price: 19.99,
     stock: 10,
-    productImage: "./src/assets/products/5.png",
+    productImage: "https://ibb.co/Nr2WWNL",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -51,7 +51,7 @@ export const PRODUCTS = [
     category: "Vestimenta",
     price: 68.99,
     stock: 10,
-    productImage: "./src/assets/products/6.webp",
+    productImage: "https://ibb.co/Cn6wGHZ",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -60,7 +60,7 @@ export const PRODUCTS = [
     category: "Vestimenta",
     price: 120.99,
     stock: 10,
-    productImage: "./src/assets/products/7.webp",
+    productImage: "https://ibb.co/2csNkdq",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
@@ -69,7 +69,7 @@ export const PRODUCTS = [
     category: "Vestimenta",
     price: 40.99,
     stock: 10,
-    productImage: "./src/assets/products/8.webp",
+    productImage: "https://ibb.co/bPCCMcn",
     detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
 ];

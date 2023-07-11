@@ -21,6 +21,7 @@ function App() {
             <Route path="/category/:categoryid" element={<Shop />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/:id" element={<ItemDetail/>} />
+            <Route path="*" element={<h4>Error 404: Page not found</h4>} />
           </Routes>
           </main>
           {/* <button onClick={exportData}> Export Data</button> */}
