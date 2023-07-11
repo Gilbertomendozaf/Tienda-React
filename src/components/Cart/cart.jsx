@@ -1,85 +1,44 @@
-// import React, { useContext } from "react";
-// import { CartContext, CartContextProvider } from "../../context/cart-context";
-// import { CartItem } from "./cart-item";
-// import { useNavigate } from "react-router-dom";
-// import { PRODUCTS } from "../../products";
-
-// import "./style-cart.css";
-
-
-
-// export const Cart = () => {
-//   const { cartItems, updateCartItemCount } = useContext(CartContext);
-//   const cartItemsArray = Object.entries(cartItems); // Convierte el objeto cartItems en un array de [itemId, count]
-//   // console.log(cartItemsArray)
-
-
-//    // Calcula el total correctamente
-//   const totalAmount = cartItemsArray.reduce((acc, [itemId, count]) => {
-//     const product = PRODUCTS.find((product) => product.id === itemId);
-//     if (product) {
-//       return acc + product.price * count;
-//     }
-//     return acc;
-//   }, 0);
-//   //
-
-//   const navigate = useNavigate();
-
-//   return (
-//     <CartContextProvider>
-
-//     <div className="cart">
-//       <div>
-//         <h1>Tu carrito</h1>
-//       </div>
-//       <div className="cart">
-//       {cartItemsArray.map(([itemId, count]) => {
-//         // console.log(itemId)
-//     const product = PRODUCTS.find((product) => product.id === itemId);
-//         console.log(product);
-//     if (count !== 0 && product) {
-//       return <CartItem key={itemId} data={product} count={count} updateCartItemCount={updateCartItemCount} />;
-//     }
-//     return null;
-//   })}
-//       </div>
-
-//       {totalAmount > 0 ? (
-//         <div className="checkout">
-//           <p>Subtotal: ${totalAmount}</p>
-//           <button onClick={() => navigate("/")}>Continue Shopping</button>
-//           <button>
-//             Checkout
-//           </button>
-//         </div>
-//       ) : (
-//         <h1>Carrito vacio</h1>
-//         )}
-//     </div>
-//         </CartContextProvider>
-//   );
-// };
-
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/cart-context";
 import { CartItem } from "./cart-item";
 import { useNavigate } from "react-router-dom";
-import { PRODUCTS } from "../../products";
+import { getCartItems } from "../../services/firebase";
+
 
 import "./style-cart.css";
 
 export const Cart = () => {
+  const [currentCartItems, setCurrentCartItems] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(null)
   const { cartItems } = useContext(CartContext);
-  const cartItemsArray = Object.entries(cartItems);
+  
+  const calcTotalAmount = (items) => {
+    let sum = 0
+    items.map((item) => {
+      sum = sum + item.price * item.count;
+    })
+    return sum;
+  };
 
-  const totalAmount = cartItemsArray.reduce((acc, [itemId, count]) => {
-    const product = PRODUCTS.find((product) => product.id === itemId);
-    if (product) {
-      return acc + product.price * count;
-    }
-    return acc;
-  }, 0);
+
+  useEffect(() => {
+    getCartItems(cartItems)
+    .then((res) => setCurrentCartItems(res) )
+
+  }, [cartItems]);
+
+  useEffect(() => {
+    setTotalAmount(calcTotalAmount(currentCartItems))
+  }, [currentCartItems])
+
+
+  // const totalAmount = cartItemsArray.reduce((acc, [itemId, count]) => {
+  //   const product = PRODUCTS.find((product) => product.id === itemId);
+  //   if (product) {
+  //     return acc + product.price * count;
+  //   }
+  //   return acc;
+  // }, 0);
 
   const navigate = useNavigate();
 
@@ -89,18 +48,15 @@ export const Cart = () => {
         <h1>Tu carrito</h1>
       </div>
       <div className="cart">
-        {cartItemsArray.map(([itemId, count]) => {
-          const product = PRODUCTS.find((product) => product.id === itemId);
-          if (count !== 0 && product) {
+        {currentCartItems.map((item) => {
+        
             return (
               <CartItem
-                key={itemId}
-                data={product}
-                count={count}
+                key={item.id}
+                data={item}
+                count={item.count}
               />
-            );
-          }
-          return null;
+            )
         })}
       </div>
 

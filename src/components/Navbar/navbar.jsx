@@ -14,6 +14,8 @@ export const Navbar = () => {
     <div className="navbar">
       <div className="links">
         <Link to="/"> Tienda </Link>
+        <Link to="/category/Vestimenta"> Vestimenta </Link>
+        <Link to="/category/Tecnologia"> Tecnologia </Link>
         <Link to="/cart">
           <ShoppingCart size={32} />
           {totalItems > 0 && <span className="cart-count">{totalItems}</span>}

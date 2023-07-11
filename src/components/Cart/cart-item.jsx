@@ -1,53 +1,16 @@
-// import React, { useContext, useState, useEffect } from "react";
-// import { CartContext  } from "../../context/cart-context";
-
-// export const CartItem = (props) => {
-//   const {count} = props;
-//   const { id, productName, price, productImage } = props.data;
-//   const { cartItems, addToCart, removeFromCart, updateCartItemCount } =
-//     useContext(CartContext);
-
-//   const [cartCount, setCartCount] = useState(count)
-
-//   useEffect (() =>{
-//     const prevCount = cartCount;
-//     const currentCount = prevCount 
-//     setCartCount()
-//   }, [cartItems])
-
-//   return (
-//     <div className="cartItem">
-//       <img src={productImage} />
-//       <div className="description">
-//         <p>
-//           <b>{productName}</b>
-//         </p>
-//         <p> Price: ${price}</p>
-//         <div className="countHandler">
-//           <button onClick={() => removeFromCart(id)}> - </button>
-//           <input
-//             value={cartCount}
-//             onChange={(e) => updateCartItemCount(id, Number(e.target.value))}
-//           />
-//           <button onClick={() => addToCart(id)}> + </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-
-
 import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../context/cart-context";
 import { Trash } from "phosphor-react";
 
 
 export const CartItem = (props) => {
+  
   const { count } = props;
   const { id, productName, price, productImage } = props.data; 
   const { cartItems, addToCart, removeFromCart, removeItemFromCart, updateCartItemCount } = useContext(CartContext); 
   const [cartCount, setCartCount] = useState(count);
+
+
 
   useEffect(() => {
     setCartCount(count);
